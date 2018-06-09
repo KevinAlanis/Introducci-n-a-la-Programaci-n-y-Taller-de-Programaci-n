@@ -1,0 +1,2 @@
+-Versión de python 3.6.5
+-Death_Race.py es la clase main (la que controla el juego)

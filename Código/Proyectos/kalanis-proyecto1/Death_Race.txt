@@ -1,0 +1,58 @@
+﻿import pygame, sys, time, random, math
+from pygame.locals import*
+from Player import*
+
+
+#Definición de algunos colores--------------------------------------------------
+Azul=(0,33,255)
+#Creación de la clase principal-------------------------------------------------
+pygame.init()
+
+def main():
+#Levantamiento de la ventana de juego-------------------------------------------
+    ventana=pygame.display.set_mode((800,600))
+    pygame.display.set_caption("Death Race")
+    icon=pygame.image.load("Imagenes/log.png")
+    pygame.display.set_icon(icon)
+    fin=False
+    reloj=pygame.time.Clock()
+    pista=pygame.image.load("Imagenes/pista.png")
+    fondo=pygame.image.load("Imagenes/fondo.png")
+#Instancias---------------------------------------------------------------------
+    player1=Player
+    player1=pygame.image.load("Imagenes/carro1-up.png")
+    player2=Player
+    player2=pygame.image.load("Imagenes/carro2-up.png")
+
+    
+#Creación de algunos objetos de relleno-----------------------------------------
+    rectangulo=pygame.Rect(87,79,660,130)
+    rectangulo1=pygame.Rect(525,192,200,350)
+    rectangulo2=pygame.Rect(454,192,100,50)
+    
+
+    #time=reloj.tick(60)
+    for event in pygame.event.get():
+        if event.type==QUIT:
+            pygame.quit()
+            sys.exit()
+             
+        
+    ventana.blit(fondo,(0,0))
+    pygame.draw.rect(ventana,Azul, rectangulo)
+    pygame.draw.rect(ventana,Azul, rectangulo1)
+    pygame.draw.rect(ventana,Azul, rectangulo2)
+    ventana.blit(pista,(25,20))
+    ventana.blit(player1,(25,20))
+    ventana.blit(player2,(50,40))
+    pygame.display.flip()
+
+    #print(pygame.mouse.get_pos())
+
+    pygame.display.update()
+
+    
+
+    #pygame.quit()
+    
+#main()
